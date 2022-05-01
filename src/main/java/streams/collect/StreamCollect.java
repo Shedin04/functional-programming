@@ -21,6 +21,10 @@ public class StreamCollect {
 			this.type = type;
 		}
 
+		public String getName() {
+			return name;
+		}
+
 		@Override
 		public String toString() {
 			return "Car{" +
@@ -58,7 +62,7 @@ public class StreamCollect {
 													   new Car("Ford", 500000, "truck"),
 													   new Car("Mazda", 750000, "truck"),
 													   new Car("Porsche", 1500000, "car")));
-		System.out.println(cars.toString());
+		System.out.println(cars);
 		Map<String, List<Car>> carsByType = cars.stream().collect(Collectors.groupingBy(car -> car.type));
 		carsByType.forEach((type, car) -> System.out.println("Type: " + type + " - " + car.toString()));
 
